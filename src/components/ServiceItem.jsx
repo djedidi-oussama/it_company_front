@@ -55,7 +55,7 @@ const ServiceItem = ({ service, relatedProjects }) => {
               relatedProjects.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-card-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-80 h-96 flex flex-col justify-between"
+                  className="bg-bg-light p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-80 h-96 flex flex-col justify-between"
                 >
                   <div className="flex justify-center">
                     <Image

@@ -41,13 +41,17 @@ function Page() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="loader border-t-4 border-blue-500 w-12 h-12 rounded-full animate-spin"></div>
+        <div className="loader border-t-4 border-main-yellow-500 w-12 h-12 rounded-full animate-spin"></div>
       </div>
     );
   }
 
   if (!service) {
-    return <div>Service not found</div>;
+    return (
+      <div className="text-center text-lg font-bold">
+        <p>Service not found</p>
+      </div>
+    );
   }
 
   return (

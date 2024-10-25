@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ProjectItem = ({ project }) => {
     return (
-      <div className="bg-card-white shadow-md rounded-lg overflow-hidden hover:bg-card-hover hover:shadow-lg transition-shadow duration-300">
+      <div className="bg-bg-light shadow-md rounded-lg overflow-hidden hover:bg-card-hover hover:shadow-lg transition-shadow duration-300">
         <Image
           width={300}
           height={300} 

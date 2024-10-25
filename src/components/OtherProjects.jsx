@@ -2,7 +2,7 @@ import ProjectItemCard from "./ProjectItem"; // Reuse the ProjectItemCard compon
 
 const OtherProjects = ({ otherProjects }) => {
   return (
-    <section className="bg-card-white py-10">
+    <section className="bg-bg-light py-10">
       <div className="container mx-auto">
         <h2 className="text-3xl font-semibold text-center mb-8">
           Other Projects

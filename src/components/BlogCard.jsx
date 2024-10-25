@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const BlogCard = ({ blog }) => {
   return (
-    <div className="bg-card-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+    <div className="bg-bg-light p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
       <Image
         width={300}
         height={300}
