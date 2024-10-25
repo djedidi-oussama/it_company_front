@@ -15,12 +15,10 @@ function Page() {
       const path = window.location.pathname;
       const id = path.split("/").pop();
 
-      const selectedBlog = blogPosts.find((post) => post._id ===id);
+      const selectedBlog = blogPosts.find((post) => post._id === id);
       setBlog(selectedBlog);
 
-      const related = blogPosts
-        .filter((b) => b._id !== id)
-        .slice(0, 3);
+      const related = blogPosts.filter((b) => b._id !== id).slice(0, 3);
       setRelatedBlogs(related);
     }
   }, [blogPosts]);
@@ -39,11 +37,15 @@ function Page() {
   }
 
   return (
-    <div>
-      <Header index={4} />
-      <BlogItem blog={blog} relatedBlogs={relatedBlogs} />
-      <Footer />
-    </div>
+    <>
+      <div className="max-w-6xl mx-auto">
+        <Header index={4} />
+        <BlogItem blog={blog} relatedBlogs={relatedBlogs} />
+      </div>
+      <div className="w-full">
+        <Footer />
+      </div>
+    </>
   );
 }
 

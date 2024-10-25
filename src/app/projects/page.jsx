@@ -8,11 +8,16 @@ import { useSelector } from 'react-redux';
 function page() {
   const {projects} = useSelector((state) => state.projects);
   return (
-    <div>
+    <>
+    <div className="max-w-6xl mx-auto">
         <Header index={3} />
         <ProjectsSection projects={projects} />
-        <Footer />
+ 
     </div>
+    <div className="w-full">
+    <Footer />
+  </div>
+  </>
   )
 }
 

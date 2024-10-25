@@ -5,11 +5,15 @@ import React from "react";
 
 function page() {
   return (
-    <div>
-      <Header index={5} />
-      <ContactSection />
-      <Footer />
-    </div>
+    <>
+      <div className="max-w-6xl mx-auto">
+        <Header index={5} />
+        <ContactSection />
+      </div>
+      <div className="w-full">
+        <Footer />
+      </div>
+    </>
   );
 }
 

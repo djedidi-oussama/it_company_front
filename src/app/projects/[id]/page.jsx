@@ -41,11 +41,15 @@ function Page() {
   }
 
   return (
-    <div>
-      <Header index={3} />
-      <ProjectDetails project={project} otherProjects={otherProjects} />
-      <Footer />
-    </div>
+    <>
+      <div className="max-w-6xl mx-auto">
+        <Header index={3} />
+        <ProjectDetails project={project} otherProjects={otherProjects} />
+      </div>
+      <div className="w-full">
+        <Footer />
+      </div>
+    </>
   );
 }
 

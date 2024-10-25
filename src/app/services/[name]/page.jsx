@@ -22,7 +22,7 @@ function Page() {
   useEffect(() => {
     const path = window.location.pathname;
     const name = path.split("/").pop();
-    
+
     // Simulate an async call with a timeout for demo purposes
     setTimeout(() => {
       const service = services.find((s) => s.link.split("/").pop() === name);
@@ -51,13 +51,17 @@ function Page() {
   }
 
   return (
-    <div>
-      <Header index={2} />
-      {service && (
-        <ServiceItem service={service} relatedProjects={relatedProjects} />
-      )}
-      <Footer />
-    </div>
+    <>
+      <div className="max-w-6xl mx-auto">
+        <Header index={2} />
+        {service && (
+          <ServiceItem service={service} relatedProjects={relatedProjects} />
+        )}
+      </div>
+      <div className="w-full">
+        <Footer />
+      </div>
+    </>
   );
 }
 
