@@ -16,7 +16,7 @@ export default function Home() {
   const {blogs} = useSelector((state) => state.blogs);
 
   return (
-    <div>
+    <div className='max-w-6xl mx-auto'>
       <Header index ={0} />
       <Hero />
       <ServicesOverview services={services} />

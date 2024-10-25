@@ -5,7 +5,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div>
+    <div className='max-w-6xl mx-auto'>
         <Header index={1} />
         <AboutSection />
         <Footer />
