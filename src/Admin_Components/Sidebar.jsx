@@ -34,7 +34,7 @@ const Sidebar = ({ index, isOpen, toggleSidebar }) => {
         <Link href="/dashboard" passHref>
           <Image src="/logo.png" alt="Logo" width={150} height={150} />
         </Link>
-        <button onClick={toggleSidebar} className="ml-auto md:hidden">
+        <button onClick={toggleSidebar} className="ml-auto lg:hidden">
           <HiX size={24} />
         </button>
       </div>
