@@ -73,7 +73,7 @@ const ServiceItem = ({ service, relatedProjects }) => {
                     {project.description}
                   </p>
                   <Link
-                    href={"/projects/" + project.id}
+                    href={"/projects/" + project._id}
                     className="flex justify-center"
                   >
                     <button className="bg-main-yellow hover:bg-hover-yellow text-black font-bold py-2 px-4 rounded-lg transition-colors duration-300">

@@ -7,7 +7,7 @@ const Footer = () => {
   const { companyInfo, quickLinks, contactInfo, socialLinks } = footerData;
 
   return (
-    <footer className='bg-[#1A1A1A] text-white py-12'>
+    <footer className='bg-[#1A1A1A] text-white py-12 max-w-full'>
       <div className='max-w-7xl mx-auto px-4 lg:px-0'>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
           {/* Company Info */}
