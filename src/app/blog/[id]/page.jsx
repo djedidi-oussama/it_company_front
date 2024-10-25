@@ -42,7 +42,7 @@ function Page() {
     <div>
       <Header index={4} />
       <BlogItem blog={blog} relatedBlogs={relatedBlogs} />
-      <Footer />
+
     </div>
   );
 }

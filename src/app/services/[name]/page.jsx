@@ -56,7 +56,7 @@ function Page() {
       {service && (
         <ServiceItem service={service} relatedProjects={relatedProjects} />
       )}
-      <Footer />
+    
     </div>
   );
 }

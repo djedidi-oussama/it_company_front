@@ -48,7 +48,7 @@ const BlogItem = ({ blog, relatedBlogs }) => {
                 >
                   <h3 className="text-lg font-semibold text-text-dark">
                     <Link
-                      href={`/blog/${relatedBlog.id}`}
+                      href={`/blog/${relatedBlog._id}`}
                       className="hover:text-main-yellow"
                     >
                       {relatedBlog.title}

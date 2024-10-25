@@ -44,7 +44,7 @@ function Page() {
     <div>
       <Header index={3} />
       <ProjectDetails project={project} otherProjects={otherProjects} />
-      <Footer />
+     
     </div>
   );
 }

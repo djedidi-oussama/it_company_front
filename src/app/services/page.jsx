@@ -9,7 +9,7 @@ function page() {
     <div>
         <Header index={2} />
         <ServicesSection  services={services}/>
-        <Footer />
+        
     </div>
   )
 }

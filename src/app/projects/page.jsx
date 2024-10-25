@@ -11,7 +11,7 @@ function page() {
     <div>
         <Header index={3} />
         <ProjectsSection projects={projects} />
-        <Footer />
+     
     </div>
   )
 }
