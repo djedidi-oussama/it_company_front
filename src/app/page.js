@@ -25,7 +25,7 @@ export default function Home() {
       <ClientTestimonials />
       <LocationSection />
       <FAQSection />
-     
+      <Footer />
     </div>
   );
 }

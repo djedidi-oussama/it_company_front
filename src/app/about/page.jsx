@@ -8,7 +8,7 @@ function page() {
     <div>
         <Header index={1} />
         <AboutSection />
-        
+        <Footer />
     </div>
   )
 }

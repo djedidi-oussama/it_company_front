@@ -11,7 +11,7 @@ function page() {
     <div>
       <Header index={4} />
       <BlogSection blogs={blogs} />
-    
+      <Footer />
     </div>
   );
 }
