@@ -27,7 +27,7 @@ function Page() {
         <div className="flex h-screen overflow-hidden">
           <Sidebar index={0} isOpen={isOpen} toggleSidebar={toggleSidebar} />
           <div className="flex-1 overflow-y-auto bg-bg-light">
-            <button onClick={toggleSidebar} className="md:hidden fixed top-4 left-4 z-50 bg-main-yellow text-text-dark rounded-full p-2 shadow-lg">
+            <button onClick={toggleSidebar} className="lg:hidden fixed top-4 left-4 z-50 bg-main-yellow text-text-dark rounded-full p-2 shadow-lg">
               <HiMenuAlt3 size={24} />
             </button>
             <DashboardHome user={user} />

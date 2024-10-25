@@ -28,7 +28,7 @@ const Sidebar = ({ index, isOpen, toggleSidebar }) => {
     }
   };
   return (
-    <div className={`fixed inset-y-0 left-0 bg-white shadow-lg transition-transform duration-300 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:relative md:w-64 z-50`}>
+    <div className={`fixed inset-y-0 left-0 bg-white shadow-lg transition-transform duration-300 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:relative lg:w-64 z-50`}>
       {/* Logo */}
       <div className="flex items-center mb-4 p-4">
         <Link href="/dashboard" passHref>
