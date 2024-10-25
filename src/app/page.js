@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import LocationSection from "@/components/ LocationSection";
 import ClientTestimonials from "@/components/ClientTestimonials";
 import FAQSection from "@/components/FAQSection";
@@ -12,20 +12,24 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 
 export default function Home() {
-  const {services} = useSelector((state) => state.services);
-  const {blogs} = useSelector((state) => state.blogs);
+  const { services } = useSelector((state) => state.services);
+  const { blogs } = useSelector((state) => state.blogs);
 
   return (
-    <div className='max-w-6xl mx-auto'>
-      <Header index ={0} />
-      <Hero />
-      <ServicesOverview services={services} />
-      <LatestBlogPosts blogs={blogs}  />
-      <WhyChooseUs />
-      <ClientTestimonials />
-      <LocationSection />
-      <FAQSection />
-      <Footer />
-    </div>
+    <>
+      <div className="max-w-6xl mx-auto">
+        <Header index={0} />
+        <Hero />
+        <ServicesOverview services={services} />
+        <LatestBlogPosts blogs={blogs} />
+        <WhyChooseUs />
+        <ClientTestimonials />
+        <LocationSection />
+        <FAQSection />
+      </div>
+      <div className="w-full">
+        <Footer />
+      </div>
+    </>
   );
 }
