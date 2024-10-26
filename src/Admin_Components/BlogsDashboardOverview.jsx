@@ -18,6 +18,7 @@ function BlogsDashboardOverview({ blogs }) {
   const [updatedContent, setUpdatedContent] = useState("");
   const [updatedTags, setUpdatedTags] = useState("");
   const [imageFile, setImageFile] = useState(null);
+  const [pdfFile , setPdfFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleImageChange = (e) => {
@@ -28,7 +29,14 @@ function BlogsDashboardOverview({ blogs }) {
       setImageFile(reader.result);
     };
   };
-
+const handlepdfChange = (e) => {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onloadend = () => {
+    setPdfFile(reader.result);
+  };
+}
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -45,6 +53,7 @@ function BlogsDashboardOverview({ blogs }) {
       const formData = {
         ...updatedBlog,
         image: imageFile,
+        pdfUrl : pdfFile
       };
 
       await axios.put(`${server}/blogs/${selectedBlog._id}`, formData, {
@@ -175,6 +184,9 @@ function BlogsDashboardOverview({ blogs }) {
           <div className="bg-white rounded-lg p-6 w-11/12 md:w-1/3">
             <h2 className="text-xl font-semibold mb-4">Edit Blog</h2>
             <form onSubmit={handleEditSubmit}>
+              <label className="block mb-2">
+                <span className="block mb-1 font-semibold">Title</span>
+              </label>
               <input
                 type="text"
                 value={updatedTitle}
@@ -183,6 +195,10 @@ function BlogsDashboardOverview({ blogs }) {
                 className="border mb-2 p-2 w-full"
                 required
               />
+
+              <label className="block mb-2">
+                <span className="block mb-1 font-semibold">Description</span>
+              </label>
               <textarea
                 value={updatedDescription}
                 onChange={(e) => setUpdatedDescription(e.target.value)}
@@ -190,6 +206,10 @@ function BlogsDashboardOverview({ blogs }) {
                 className="border mb-2 p-2 w-full"
                 required
               />
+
+              <label className="block mb-2">
+                <span className="block mb-1 font-semibold">Content</span>
+              </label>
               <textarea
                 value={updatedContent}
                 onChange={(e) => setUpdatedContent(e.target.value)}
@@ -197,6 +217,10 @@ function BlogsDashboardOverview({ blogs }) {
                 className="border mb-2 p-2 w-full"
                 required
               />
+
+              <label className="block mb-2">
+                <span className="block mb-1 font-semibold">Tags</span>
+              </label>
               <input
                 type="text"
                 value={updatedTags}
@@ -205,11 +229,24 @@ function BlogsDashboardOverview({ blogs }) {
                 className="border mb-2 p-2 w-full"
                 required
               />
+
+              <label className="block mb-2">
+                <span className="block mb-1 font-semibold">PDF</span>
+              </label>
+              <input type="file"
+              className="border mb-2 p-2 w-full"
+              onChange={handlepdfChange}
+              />
+
+              <label className="block mb-2">
+                <span className="block mb-1 font-semibold">Image</span>
+              </label>
               <input
                 type="file"
                 onChange={handleImageChange}
                 className="border mb-2 p-2 w-full"
               />
+
               <button
                 type="submit"
                 className="bg-blue-500 text-white py-2 px-4 rounded mt-2"

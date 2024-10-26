@@ -13,6 +13,7 @@ function DashboardBlogs({ blogs }) {
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
+  const [pdf , setPdf] = useState(null);
   const [tags, setTags] = useState("");
   const [link, setLink] = useState("");
   const [Loading, setLoading] = useState(false);
@@ -32,6 +33,7 @@ function DashboardBlogs({ blogs }) {
       description: description,
       content: content,
       image: image,
+      pdfUrl : pdf,
       tags: tagsArray,
     };
 
@@ -48,6 +50,7 @@ function DashboardBlogs({ blogs }) {
           setDescription("");
           setContent("");
           setImage(null);
+          setPdf(null);
           setTags("");
           dispatch(getAllBlogs());
         })
@@ -68,7 +71,14 @@ function DashboardBlogs({ blogs }) {
       setImage(reader.result);
     };
   };
-
+const handlePdfChange = (e) => {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onloadend = () => {
+    setPdf(reader.result);
+  };
+};
   return (
     <div className="w-full h-screen p-5 mt-20">
       <div className="flex justify-between">
@@ -131,6 +141,16 @@ function DashboardBlogs({ blogs }) {
                     className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-main-yellow focus:border-transparent"
                     rows={5}
                   />
+                </div>
+                <div className="mb-4">
+                <label className="block text-gray-700 mb-2">Pdf File</label>
+                <input
+                  type="file"
+                  onChange={handlePdfChange}
+                  required
+                  accept="application/pdf"
+                  className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-main-yellow focus:border-transparent"
+                />
                 </div>
                 <div className="mb-4">
                   <label className="block text-gray-700 mb-2">

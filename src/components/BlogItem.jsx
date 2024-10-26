@@ -31,6 +31,19 @@ const BlogItem = ({ blog, relatedBlogs }) => {
                 </span>
               ))}
             </div>
+            {blog.pdfUrl && (
+              <div className="flex justify-center w-full items-center mt-6">
+                <a
+                  href={blog?.pdfUrl}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-main-yellow hover:bg-hover-yellow text-black font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300"
+                >
+                  Download Blog PDF
+                </a>
+              </div>
+            )}
           </div>
         </div>
 
@@ -54,7 +67,7 @@ const BlogItem = ({ blog, relatedBlogs }) => {
                       {relatedBlog.title}
                     </Link>
                   </h3>
-                  <p >{relatedBlog.description}</p>
+                  <p>{relatedBlog.description}</p>
                 </li>
               ))
             ) : (
