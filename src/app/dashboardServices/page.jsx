@@ -1,48 +1,56 @@
 "use client";
-import DashboardServices from "@/Admin_Components/DashboardServices";
-import Sidebar from "@/Admin_Components/Sidebar";
-import { useRouter } from "next/navigation"; // Use 'next/navigation' in app directory
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { HiMenuAlt3 } from "react-icons/hi"; // Import menu icon
-import { getAllServices } from "@/redux/action/services";
 
+// Imports
+import DashboardServices from "@/Admin_Components/DashboardServices"; // Dashboard services component
+import Sidebar from "@/Admin_Components/Sidebar"; // Sidebar component
+import { useRouter } from "next/navigation"; // Navigation hook for routing
+import React, { useEffect, useState } from "react"; // React imports
+import { useSelector, useDispatch } from "react-redux"; // Redux hooks
+import { HiMenuAlt3 } from "react-icons/hi"; // Menu icon
+import { getAllServices } from "@/redux/action/services"; // Redux action to fetch services
+
+// Main page component
 function Page() {
-  const { isAuthenticated, loading } = useSelector((state) => state.user);
-  const { services, isLoading, error } = useSelector((state) => state.services);
-  const router = useRouter();
-  const [isOpen, setIsOpen] = useState(true); // Initial state for sidebar
-  const dispatch = useDispatch();
+  // State selection from Redux store
+  const { isAuthenticated, loading } = useSelector((state) => state.user); // User authentication
+  const { services, isLoading, error } = useSelector((state) => state.services); // Services data
+  const router = useRouter(); // Initialize router for navigation
+  const [isOpen, setIsOpen] = useState(true); // Sidebar visibility state
+  const dispatch = useDispatch(); // Redux dispatch
 
+  // Redirect to login if not authenticated and loading is complete
   useEffect(() => {
-    // Only attempt redirection after the loading completes
     if (!loading && !isAuthenticated && !isLoading) {
-      router.push("/login"); // Redirect to login if not authenticated
+      router.push("/login"); // Navigate to login page if not authenticated
     }
   }, [isAuthenticated, loading, router, isLoading]);
 
+  // Fetch all services on component mount
   useEffect(() => {
     dispatch(getAllServices());
   }, [dispatch]);
 
-  // If still loading, prevent rendering anything until authentication state is clear
+  // Handle loading and authentication checks before rendering
   if (loading || isLoading) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; // Display loading state
   }
 
-  // Ensure nothing is rendered until we have a confirmed authenticated state
+  // Display error if it exists
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  // Only render if authenticated
   if (!isAuthenticated) {
     return null;
   }
-  if (error) {
-    return <div>Error: {error}</div>; // Display error if it exists
-  }
 
+  // Toggle sidebar open/close
   const toggleSidebar = () => {
-    setIsOpen(!isOpen); // Toggle sidebar open/close
+    setIsOpen(!isOpen);
   };
 
-  // Debugging: Log the services to check its state
+  // Debugging: log services for checking the fetched data
   console.log("Services:", services);
 
   return (
@@ -58,15 +66,11 @@ function Page() {
               <HiMenuAlt3 size={24} />
             </button>
 
-            {/* Render loading state for services */}
+            {/* Loading state for services */}
             {isLoading ? (
               <div>Loading services...</div>
             ) : (
-              <>
-               
-                  <DashboardServices services={services} />
-                
-              </>
+              <DashboardServices services={services} />
             )}
           </div>
         </div>

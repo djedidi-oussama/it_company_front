@@ -1,22 +1,27 @@
-import { server } from "@/data/server"; // Ensure this is correctly pointing to your server config
-import axios from "axios";
+import { server } from "@/data/server"; // Import the server URL configuration
+import axios from "axios"; // Import axios for making HTTP requests
 
+// Action creator for fetching all services
 export const getAllServices = () => async (dispatch) => {
   try {
+    // Dispatch an action to indicate that the request has started
     dispatch({
-      type: "getAllServicesRequest",
+      type: "getAllServicesRequest", // Action type for the request
     });
 
-    const { data } = await axios.get(`${server}/services`); // Use destructuring to get data directly
+    // Make an HTTP GET request to fetch services from the server
+    const { data } = await axios.get(`${server}/services`); // Destructure the response to get the data
 
+    // Dispatch an action to indicate that the services have been successfully fetched
     dispatch({
-      type: "getAllServicesSuccess",
-      payload: data.services, // Ensure this matches the structure returned by your API
+      type: "getAllServicesSuccess", // Action type for successful fetch
+      payload: data.services, // The fetched services, ensure this matches the API response structure
     });
   } catch (error) {
+    // Dispatch an action to indicate that the request failed
     dispatch({
-      type: "getAllServicesFailed",
-      payload: error.response?.data?.message || "Failed to fetch services", // Safely access error message
+      type: "getAllServicesFailed", // Action type for failed fetch
+      payload: error.response?.data?.message || "Failed to fetch services", // Safely access error message or provide a fallback
     });
   }
 };

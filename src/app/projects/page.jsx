@@ -1,24 +1,31 @@
-"use client"
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import ProjectsSection from '@/components/ProjectsSection'
-import React from 'react'
-import { useSelector } from 'react-redux';
+"use client"; // Enables client-side rendering for this Next.js component
 
+// Import necessary components
+import Footer from '@/components/Footer'; // Footer component for the page footer
+import Header from '@/components/Header'; // Header component for the page header
+import ProjectsSection from '@/components/ProjectsSection'; // Component to display a list of projects
+import React from 'react'; // React library for component creation
+import { useSelector } from 'react-redux'; // Hook to access Redux store data
+
+// Main page component for displaying projects
 function page() {
-  const {projects} = useSelector((state) => state.projects);
+  // Access projects data from Redux store using useSelector
+  const { projects } = useSelector((state) => state.projects);
+
   return (
     <>
-    <div className="max-w-6xl mx-auto">
-        <Header index={3} />
-        <ProjectsSection projects={projects} />
- 
-    </div>
-    <div className="w-full">
-    <Footer />
-  </div>
-  </>
-  )
+      {/* Main content area, centered with max-width */}
+      <div className="max-w-6xl mx-auto">
+        <Header index={3} /> {/* Header component with index prop, likely to set the active link */}
+        <ProjectsSection projects={projects} /> {/* ProjectsSection component displaying projects */}
+      </div>
+
+      {/* Footer component spanning full width at the bottom */}
+      <div className="w-full">
+        <Footer />
+      </div>
+    </>
+  );
 }
 
-export default page
+export default page; // Exports the component as the default export

@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 
 const DashboardHome = ({ user }) => {
-
   return (
     <div className="flex flex-col items-center justify-start h-full p-8 bg-bg-light text-text-dark">
       {/* Welcome Message */}
@@ -17,7 +16,8 @@ const DashboardHome = ({ user }) => {
           src="/feature-img.webp" // Replace with your video path
           width={400}
           height={400}
-          alt=""
+          alt="Feature animation" // Provide a descriptive alt text
+          className="rounded-lg shadow-lg" // Add some styling
         />
       </div>
 
@@ -27,9 +27,22 @@ const DashboardHome = ({ user }) => {
         you with all the tools you need to control and monitor your activities.
         Enjoy your stay!
       </p>
-
       
-     
+      {/* Additional User Information (optional) */}
+      <div className="text-center">
+        {/* Example: Displaying user profile picture */}
+        {user.profilePicture && (
+          <Image
+            src={user.profilePicture}
+            alt={`${user.username}'s profile`}
+            width={100}
+            height={100}
+            className="rounded-full mb-4" // Circular profile picture
+          />
+        )}
+        {/* Optional: Account status or additional info */}
+        <p className="text-lg">Your account is currently active.</p>
+      </div>
     </div>
   );
 };

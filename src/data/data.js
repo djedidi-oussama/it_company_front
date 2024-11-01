@@ -1,5 +1,6 @@
 // data.js
 
+// Importing various icons from react-icons/fa and other packages
 import {
   FaCode,
   FaPaintBrush,
@@ -33,6 +34,8 @@ import {
 import { BsFillGearFill } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
+
+// Header items for navigation
 export const headerItems = [
   { title: "Home", link: "/", icon: <FaHome className="w-5 h-5" /> },
   {
@@ -45,7 +48,6 @@ export const headerItems = [
     link: "/services",
     icon: <FaServicestack className="w-5 h-5" />,
   },
-
   {
     title: "Projects",
     link: "/projects",
@@ -59,101 +61,7 @@ export const headerItems = [
   },
 ];
 
-// Services
-export const services = {
-  "web-development": {
-    title: "Web Development",
-    description:
-      "We build responsive and fast websites to meet modern business needs with the latest web technologies. Our team specializes in creating custom web solutions that help businesses stand out and drive engagement.",
-    icon: <FaCode className="text-5xl text-yellow-400" />,
-    imageUrl: "/images/blog/web-development.jpg",
-    tags: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
-    link: "/services/web-development",
-  },
-  design: {
-    title: "Design",
-    description:
-      "Creating visually stunning designs to elevate your brand identity and capture your audience’s attention. Our design team focuses on user experience and the latest design trends to create impactful visuals.",
-    icon: <FaPaintBrush className="text-5xl text-yellow-400" />,
-    imageUrl: "/images/blog/mobile-app-design.jpeg",
-    tags: ["UI/UX", "Graphic Design", "Branding"],
-    link: "/services/design",
-  },
-  "mobile-app-development": {
-    title: "Mobile App Development",
-    description:
-      "We create user-friendly mobile applications for iOS and Android to bring your business to users on the go. Our mobile solutions are tailored to meet your needs and provide a seamless experience.",
-    icon: <FaMobileAlt className="text-5xl text-yellow-400" />,
-    imageUrl: "/images/blog/mobile-app-development.jpg",
-    tags: ["iOS", "Android", "React Native", "Flutter"],
-    link: "/services/mobile-app-development",
-  },
-  "cloud-solutions": {
-    title: "Cloud Solutions",
-    description:
-      "Providing scalable and secure cloud solutions for your business processes. Our experts will help you migrate to the cloud and optimize your resources for better performance.",
-    icon: <FaCloud className="text-5xl text-yellow-400" />,
-    imageUrl: "/images/cloud-solutions.jpg",
-    tags: ["AWS", "Azure", "Cloud Migration"],
-    link: "/services/cloud-solutions",
-  },
-  cybersecurity: {
-    title: "Cybersecurity",
-    description:
-      "Protecting your business with industry-leading cybersecurity solutions. We provide comprehensive security assessments and tailored solutions to safeguard your digital assets.",
-    icon: <FaShieldAlt className="text-5xl text-yellow-400" />,
-    imageUrl: "/images/cybersecurity.jpg",
-    tags: ["Network Security", "Data Protection", "Compliance"],
-    link: "/services/cybersecurity",
-  },
-};
-
-// Latest Blog Posts
-// data/data.js
-export const blogPosts = [
-  {
-    id: 1,
-    title: "The Future of Web Development",
-    description:
-      "Explore the latest trends and technologies shaping the future of web development.",
-    content:
-      "Web development is constantly evolving. In this article, we explore...",
-    image: "/images/blog/web-development.jpg",
-    tags: ["Web Development", "Future", "Technology"],
-  },
-  {
-    id: 2,
-    title: "Top Mobile App Design Principles",
-    description:
-      "Learn the key principles to design a user-friendly and visually appealing mobile app.",
-    content:
-      "Designing a mobile app involves several key principles such as...",
-    image: "/images/blog/mobile-app-design.jpeg",
-    tags: ["Mobile App", "Design", "User Experience"],
-  },
-  {
-    id: 3,
-    title: "Cloud Computing for Businesses",
-    description:
-      "Discover how cloud computing can optimize and scale your business operations.",
-    content:
-      "Cloud computing has revolutionized how businesses operate. Here are...",
-    image: "/images/blog/cloud-computing.png",
-    tags: ["Cloud Computing", "Business", "Technology"],
-  },
-  {
-    id: 4,
-    title: "Cybersecurity Best Practices",
-    description:
-      "Protect your business with these essential cybersecurity tips and strategies.",
-    content:
-      "In today's digital age, cybersecurity is paramount. Here are some...",
-    image: "/images/blog/cybersecurity.png",
-    tags: ["Cybersecurity", "Protection", "Safety"],
-  },
-];
-
-// Why Choose Us
+// Reasons to choose the service
 export const reasons = [
   {
     id: 1,
@@ -185,7 +93,7 @@ export const reasons = [
   },
 ];
 
-// What Our Clients Say
+// Testimonials from clients
 export const testimonials = [
   {
     id: 1,
@@ -221,7 +129,7 @@ export const testimonials = [
   },
 ];
 
-// Frequently Asked Questions
+// Frequently Asked Questions (FAQs)
 export const faqs = [
   {
     question: "What services do you offer?",
@@ -250,8 +158,7 @@ export const faqs = [
   },
 ];
 
-// data/data.js
-
+// Contact information for the footer or contact section
 export const contactInfo = [
   {
     type: "address",
@@ -272,7 +179,8 @@ export const contactInfo = [
     icon: <FaEnvelope className="text-main-yellow text-3xl mr-4" />,
   },
 ];
-// footerConfig.js
+
+// Footer configuration
 export const footerData = {
   companyInfo: {
     description:
@@ -309,73 +217,8 @@ export const footerData = {
     },
   ],
 };
-export const projectsData = [
-  {
-    id: 1,
-    name: "Creative Branding",
-    category: "Design",
-    description:
-      "A creative branding project showcasing modern design principles.",
-    content: `This project involved the creation of a comprehensive branding strategy, 
-    including logo design, color palette selection, and visual identity development for a tech company.
-    The branding reflects a sleek, modern, and professional aesthetic to match the company's values and market presence.`,
-    mainImage:
-      "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    images: [
-      "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    ],
-  },
-  {
-    id: 2,
-    name: "E-Commerce Platform",
-    category: "Web Development",
-    description:
-      "A complete e-commerce platform built for a growing online retail business.",
-    content: `This project was focused on developing a custom e-commerce platform using Next.js and Strapi. 
-    The platform allows users to browse products, add items to their cart, and proceed through a secure checkout process.
-    Features include product filtering, dynamic pricing, and multi-language support for an international customer base.`,
-    mainImage:
-      "https://images.pexels.com/photos/6476582/pexels-photo-6476582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    images: [
-      "https://images.pexels.com/photos/6476586/pexels-photo-6476586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    ],
-  },
 
-  {
-    id: 4,
-    name: "Photography Portfolio",
-    category: "Photography",
-    description:
-      "A personal photography portfolio showcasing landscape and portrait works.",
-    content: `This portfolio website was designed for a professional photographer to display their best work. 
-    The site features high-resolution photo galleries, a blog section, and contact forms for potential clients. 
-    The design focuses on clean layouts that let the photographs shine, with fast loading times and responsive design.`,
-    mainImage:
-      "https://images.pexels.com/photos/2104151/pexels-photo-2104151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    images: [
-      "https://images.pexels.com/photos/2104162/pexels-photo-2104162.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/2104176/pexels-photo-2104176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    ],
-  },
-  {
-    id: 5,
-    name: "Fitness App",
-    category: "App Development",
-    description:
-      "A fitness and health app designed to help users achieve their fitness goals.",
-    content: `This fitness app helps users plan and track their workouts, set fitness goals, and monitor their progress over time. 
-    It includes features like exercise tutorials, nutrition plans, and progress reports, all integrated with wearables for accurate health tracking.`,
-    mainImage:
-      "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    images: [
-      "https://images.pexels.com/photos/1954523/pexels-photo-1954523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "https://images.pexels.com/photos/1954525/pexels-photo-1954525.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    ],
-  },
-];
-
+// Dashboard items for navigation in the admin panel
 export const DashboardItems = [
   {
     name: "Home",
@@ -397,5 +240,4 @@ export const DashboardItems = [
     path: "/dashboardBlogs",
     icon: <AiOutlineFileText className="mr-2" />,
   },
-
 ];
