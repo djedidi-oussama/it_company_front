@@ -1,7 +1,7 @@
 "use client"; // This enables client-side rendering in this component for Next.js
 
+import LocationSection from "@/components/ LocationSection";
 // Importing components used on the homepage
-import LocationSection from "@/components/LocationSection"; // Section for displaying location details
 import ClientTestimonials from "@/components/ClientTestimonials"; // Section to showcase client testimonials
 import FAQSection from "@/components/FAQSection"; // Section for frequently asked questions
 import Footer from "@/components/Footer"; // Footer component
