@@ -60,7 +60,7 @@ function Page() {
       <div className="max-w-6xl mx-auto">
         <Header index={2} /> {/* Header component with index prop, likely for active link tracking */}
         {service && (
-          <ServiceItem service={service} relatedProjects={relatedProjects} /> {/* Displays the service with related projects */}
+          <ServiceItem service={service} relatedProjects={relatedProjects} /> /* Displays the service with related projects */
         )}
       </div>
       
